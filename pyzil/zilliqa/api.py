@@ -54,6 +54,7 @@ class ZilliqaAPI:
                 raise APIError(_e)
 
         try:
+            print(method_name, *params)
             return send_request(*params)
         except APIError as e:
             # fix for jsonrpcclient < 3.3.1

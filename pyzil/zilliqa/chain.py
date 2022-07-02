@@ -113,12 +113,15 @@ TestNet = BlockChain("https://dev-api.zilliqa.com/",
 MainNet = BlockChain("https://api.zilliqa.com/",
                      version=65537, network_id=1)
 
+LocalTestNet = BlockChain("http://localhost:4201/",
+                     version=65537, network_id=1)
+
 IsolatedServer = BlockChain("https://zilliqa-isolated-server.zilliqa.com/",
                             version=65537, network_id=1)
 
 if "__main__" == __name__:
-    print(TestNet.api.GetCurrentMiniEpoch())
-    print(TestNet.api.GetCurrentDSEpoch())
-    print(TestNet.api.GetBalance("b50c2404e699fd985f71b2c3f032059f13d6543b"))
-    print(TestNet.api.GetBalance("4BAF5faDA8e5Db92C3d3242618c5B47133AE003C"))
-    print(TestNet.api.GetBalance("4BAF5faDA8e5Db92C3d3242618c5B47133AE003C"))
+    print(LocalTestNet.api.GetCurrentMiniEpoch())
+    print(LocalTestNet.api.GetCurrentDSEpoch())
+    print(LocalTestNet.api.GetBalance("b50c2404e699fd985f71b2c3f032059f13d6543b"))
+    print(LocalTestNet.api.GetBalance("4BAF5faDA8e5Db92C3d3242618c5B47133AE003C"))
+    print(LocalTestNet.api.GetBalance("4BAF5faDA8e5Db92C3d3242618c5B47133AE003C"))
